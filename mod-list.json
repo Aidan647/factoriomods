@@ -1,0 +1,48 @@
+{
+  "mods": [
+    {
+      "name": "base",
+      "enabled": true
+    },
+    {
+      "name": "alien-module",
+      "enabled": false
+    },
+    {
+      "name": "angelsbioprocessing",
+      "enabled": false
+    },
+    {
+      "name": "angelsindustries",
+      "enabled": false
+    },
+    {
+      "name": "angelspetrochem",
+      "enabled": false
+    },
+    {
+      "name": "angelsrefining",
+      "enabled": false
+    },
+    {
+      "name": "angelssmelting",
+      "enabled": false
+    },
+    {
+      "name": "creative-mode-fix",
+      "enabled": true
+    },
+    {
+      "name": "ezlib",
+      "enabled": true
+    },
+    {
+      "name": "faster_dron_charge",
+      "enabled": false
+    },
+    {
+      "name": "fundament_tech",
+      "enabled": true
+    }
+  ]
+}
