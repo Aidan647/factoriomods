@@ -44,7 +44,7 @@ data:extend(
     drawing_box = {{-1, -4}, {1, 3}},
     --alert_icon_shift = util.by_pixel(0, -24),
     weight = 200,
-    max_speed = 999,
+    max_speed = 50,
     max_power = "1000kW",
     reversing_power_modifier = 0.3,
     braking_force = 20,
