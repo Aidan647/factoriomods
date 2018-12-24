@@ -1,4 +1,6 @@
-del_list = ezlib.recipe.get.list({category = "smelting"})
+del_list1 = ezlib.recipe.get.list({category = "smelting"})
+del_list2 = ezlib.recipe.get.list({category = "X100_smelting"})
+del_list = ezlib.tbl.add(del_list1,del_list2)
 -- del_list2 = ezlib.recipe.get.list({})
 -- del_list3 = ezlib.recipe.get.list({category = "smelting"})
 -- del_list4 = ezlib.recipe.get.list({category = "smelting"})

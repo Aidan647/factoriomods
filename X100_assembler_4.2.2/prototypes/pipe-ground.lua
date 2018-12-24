@@ -3,7 +3,10 @@ data:extend({
   {
     type = "item",
     name = "X100_pipe-ground",
-    icon = "__X100_assembler__/graphics/entity/pipe/icon_5d_pipe-to-underground_3_.png",
+	icons ={
+		{icon = "__X100_assembler__/graphics/entity/pipe/icon_5d_pipe-to-underground_3_.png"},
+		{icon = "__X100_assembler__/graphics/icons.png"}
+	},
     flags = {"goes-to-quickbar"},
     icon_size = 32,
     subgroup = "energy-pipe-distribution",

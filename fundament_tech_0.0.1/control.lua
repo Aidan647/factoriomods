@@ -1,0 +1,13 @@
+-- script.on_event(defines.events.on_console_chat, function(event)
+  -- local player_index  = event.player_index 
+  -- local message  = event.message 
+    -- game.players[player_index].print("Иди на хуй " .. game.players[player_index].name)
+-- end)
+-- script.on_event(defines.events.on_built_entity, function(event)
+  -- local player_index	= event.player_index 
+  -- local created_entity  = event.created_entity
+  -- local stack = event.stack
+  -- logg =remote.call("ezlib", "log_print", game.get_entity_by_tag("0x000001fcfa682bd0"),0)
+  -- remote.call("ezlib", "log_print", created_entity)
+  -- game.players[player_index].print(logg)
+-- end)

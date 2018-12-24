@@ -75,7 +75,10 @@ data:extend({
   {
     type = "item",
     name = "splitter_X100",
-    icon = "__X100_assembler__/graphics/icon/icon_5d_splitter_5_.png",
+	icons ={
+		{icon = "__X100_assembler__/graphics/icon/icon_5d_splitter_5_.png"},
+		{icon = "__X100_assembler__/graphics/icons.png"}
+	},
     flags = {"goes-to-quickbar"},
     icon_size = 32,
     subgroup = "belt",

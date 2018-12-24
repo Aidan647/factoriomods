@@ -1,6 +1,7 @@
 require("functions.list")
 require("functions.other")
 require("functions.item")
+require("prototypes.green_screen")
 --require("prototypes.item")
 require("functions.recipe")
 require("functions.tech")

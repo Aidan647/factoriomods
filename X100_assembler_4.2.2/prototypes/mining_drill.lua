@@ -152,7 +152,10 @@ data:extend(
     {
     type = "item",
     name = "X100_electric-mining-drill",
-	icon = "__base__/graphics/icons/electric-mining-drill.png",
+	icons ={
+		{icon = "__base__/graphics/icons/electric-mining-drill.png"},
+		{icon = "__X100_assembler__/graphics/icons.png"}
+	},
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "extraction-machine",

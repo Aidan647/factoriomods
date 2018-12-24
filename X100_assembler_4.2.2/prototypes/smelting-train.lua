@@ -17,7 +17,10 @@ data:extend(
   {
     type = "item-with-entity-data",
     name = "X100-locomotive-1",
-    icon = "__X100_assembler__/graphics/icon/smelting-loco-1.png",
+	icons ={
+		{icon = "__X100_assembler__/graphics/icon/smelting-loco-1.png"},
+		{icon = "__X100_assembler__/graphics/icons.png"}
+	},
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "transport",
@@ -40,14 +43,14 @@ data:extend(
     selection_box = {{-1, -3}, {1, 3}},
     drawing_box = {{-1, -4}, {1, 3}},
     --alert_icon_shift = util.by_pixel(0, -24),
-    weight = 6000,
-    max_speed = 3,
-    max_power = "5000kW",
+    weight = 200,
+    max_speed = 999,
+    max_power = "1000kW",
     reversing_power_modifier = 0.3,
     braking_force = 20,
     friction_force = 0.60,
     vertical_selection_shift = -0.5,
-    air_resistance = 0.00075, -- this is a percentage of current speed that will be subtracted
+    air_resistance = 1.00075, -- this is a percentage of current speed that will be subtracted
     connection_distance = 3,
     joint_distance = 4,
     energy_per_hit_point = 5,
@@ -267,7 +270,10 @@ data:extend(
   {
     type = "item-with-entity-data",
     name = "X100-locomotive-tender",
-    icon = "__X100_assembler__/graphics/icon/smelting-loco-tender.png",
+	icons ={
+		{icon = "__X100_assembler__/graphics/icon/smelting-loco-tender.png"},
+		{icon = "__X100_assembler__/graphics/icons.png"}
+	},
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "transport",
@@ -290,8 +296,8 @@ data:extend(
     selection_box = {{-1, -3}, {1, 3}},
     drawing_box = {{-1, -4}, {1, 3}},
     weight = 6000,
-    max_speed = 0.4,
-    max_power = "10000kW",
+    max_speed = 2,
+    max_power = "15000kW",
     reversing_power_modifier = 10,
     braking_force = 25,
     friction_force = 0.60,
@@ -332,7 +338,7 @@ data:extend(
     burner =
     {
       fuel_category = "chemical",
-      effectivity = 1,
+      effectivity = 1.5,
       fuel_inventory_size = 3,
       smoke =
       {
@@ -540,7 +546,10 @@ data:extend(
   {
     type = "item-with-entity-data",
     name = "X100-wagon-1",
-    icon = "__X100_assembler__/graphics/icon/smelting-wagon1.png",
+	icons ={
+		{icon = "__X100_assembler__/graphics/icon/smelting-wagon1.png"},
+		{icon = "__X100_assembler__/graphics/icons.png"}
+	},
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "transport",
@@ -564,7 +573,7 @@ data:extend(
     selection_box = {{-1, -2.703125}, {1, 3.296875}},
     vertical_selection_shift = -0.796875,
     weight = 3000,
-    max_speed = 3,
+    max_speed = 999,
     braking_force = 3,
     friction_force = 0.50,
     air_resistance = 0.01,
@@ -709,7 +718,7 @@ data:extend(
   total_capacity = 25000 * 4,
   capacity = 25000 * 4,
   weight = 3000,
-  max_speed = 3,
+  max_speed = 999,
   braking_force = 4.5,
   friction_force = 0.5,
   air_resistance = 0.01,

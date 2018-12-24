@@ -3,13 +3,16 @@ data:extend(
   {
     type = "item",
     name = "X100_storage_tank",
-    icon = "__base__/graphics/icons/storage-tank.png",
+	icons ={
+	{icon = "__base__/graphics/icons/storage-tank.png"},
+	{icon = "__X100_assembler__/graphics/icons.png"}
+	},
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "storage",
     order = "z[fluid]-z[storage-tank]",
     place_result = "X100_storage_tank",
-    stack_size = 5
+    stack_size = 100
   },
   {
     type = "storage-tank",
@@ -17,53 +20,45 @@ data:extend(
     icon = "__base__/graphics/icons/storage-tank.png",
     icon_size = 32,
     flags = {"placeable-player", "player-creation"},
-    minable = {mining_time = 1.5, result = "X100_storage_tank"},
+    minable = {mining_time = 10, result = "X100_storage_tank"},
     max_health = 5000,
     corpse = "big-remnants",
-    collision_box = {{-7.2, -7.2}, {7.2, 7.2}},
-    selection_box = {{-7.3, -7.3}, {7.3, 7.3}},
+    collision_box = {{-7, -7}, {7, 7}},
+    selection_box = {{-7, -7}, {7, 7}},
+	collision_mask = {"resource-layer"},
     fluid_box =
     {
-      base_area = 10000,
+      base_area = 100000,
       pipe_covers = pipecoverspictures(),
       pipe_connections =
       {
-        { position = {-7.1, -7.8} },
-		{ position = {-5.1, -7.8} },
-		{ position = {-3.1, -7.8} },
-		{ position = {-1.1, -7.8} },
-		{ position = {1.1, -7.8} },
-		{ position = {3.1, -7.8} },
-		{ position = {5.1, -7.8} },
-		{ position = {7.1, -7.8} },
-		
-		{ position = {-7.1, 7.8} },
-		{ position = {-5.1, 7.8} },
-		{ position = {-3.1, 7.8} },
-		{ position = {-1.1, 7.8} },
-		{ position = {1.1, 7.8} },
-		{ position = {3.1, 7.8} },
-		{ position = {5.1, 7.8} },
-		{ position = {7.1, 7.8} },
-		
-		
-		{ position = {7.8,-7.1} },
-		{ position = {7.8,-5.1} },
-		{ position = {7.8,-3.1} },
-		{ position = {7.8,-1.1} },
-		{ position = {7.8,1.1} },
-		{ position = {7.8,3.1} },
-		{ position = {7.8,5.1} },
-		{ position = {7.8,7.1} },
-		
-		{ position = {-7.8,-7.1} },
-		{ position = {-7.8,-5.1} },
-		{ position = {-7.8,-3.1} },
-		{ position = {-7.8,-1.1} },
-		{ position = {-7.8,1.1} },
-		{ position = {-7.8,3.1} },
-		{ position = {-7.8,5.1} },
-		{ position = {-7.8,7.1} },
+        { position = {-7.5, -5.5} },
+        { position = {-7.5, -3.5} },
+        { position = {-7.5, -1.5} },
+        { position = {-7.5, 5.5} },
+        { position = {-7.5, 3.5} },
+        { position = {-7.5, 1.5} },
+
+        { position = {7.5, -5.5} },
+        { position = {7.5, -3.5} },
+        { position = {7.5, -1.5} },
+        { position = {7.5, 5.5} },
+        { position = {7.5, 3.5} },
+        { position = {7.5, 1.5} },
+
+        { position = {-5.5, -7.5} },
+        { position = {-3.5, -7.5} },
+        { position = {-1.5, -7.5} },
+        { position = {5.5, -7.5} },
+        { position = {3.5, -7.5} },
+        { position = {1.5, -7.5} },
+
+        { position = {-5.5, 7.5} },
+        { position = {-3.5, 7.5} },
+        { position = {-1.5, 7.5} },
+        { position = {5.5, 7.5} },
+        { position = {3.5, 7.5} },
+        { position = {1.5, 7.5} },
       },
     },
     two_direction_only = true,
@@ -77,19 +72,10 @@ data:extend(
           {
             filename = "__X100_assembler__/graphics/storage-tank.png",
             priority = "extra-high",
-            frames = 2,
+            frames = 1,
             width = 550,
             height = 540,
             shift = util.by_pixel(0, 4),
-          },
-          {
-            filename = "__X100_assembler__/graphics/storage-tank-shadow.png",
-            priority = "extra-high",
-            frames = 2,
-            width = 730,
-            height = 385,
-            shift = util.by_pixel(30, 22.5),
-            draw_as_shadow = true
           }
         }
       },

@@ -7,7 +7,10 @@ data:extend({
 	{
 		type = "item",
 		name = "X100_furnace",
-		icon = "__X100_assembler__/graphics/icon/electric-furnace.png",
+		icons ={
+		{icon = "__X100_assembler__/graphics/icon/electric-furnace.png"},
+		{icon = "__X100_assembler__/graphics/icons.png"}
+		},
 		icon_size = 32,
 		flags = {"goes-to-quickbar"},
 		subgroup = "production-machine",
@@ -15,52 +18,60 @@ data:extend({
 		place_result = "X100_furnace",
 		stack_size = 200
 	},
-
 {
     type = "furnace",
     name = "X100_furnace",
     icon = "__X100_assembler__/graphics/icon/electric-furnace.png",
-    icon_size = 32,
+	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 1, result = "X100_furnace"},
-    max_health = 350,
+    minable =
+    {
+        mining_time = 1,
+        result = "X100_furnace"
+    },
+    max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
+    light =
+    {
+        intensity = 1,
+        size = 10
+    },
     resistances =
     {
-      {
-        type = "fire",
-        percent = 80
-      }
+        {
+          type = "fire",
+          percent = 80
+        }
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    module_specification =
+	module_specification =
     {
-      module_slots = 5,
+      module_slots = 4,
       module_info_icon_shift = {0, 0.8}
     },
-    allowed_effects = {"consumption", "speed", "productivity", "pollution"},
+    allowed_effects = {"consumption", "speed", "pollution"},
     crafting_categories = {"X100_smelting"},
     result_inventory_size = 5,
-    crafting_speed = 20,
-    energy_usage = "2000kW",
+    crafting_speed = 50,
+    energy_usage = "1MW",
     source_inventory_size = 1,
+    fast_replaceable_group = "reverse-factory",
     energy_source =
     {
-      type = "electric",
-      usage_priority = "secondary-input",
-      emissions = 0.005
+        type = "electric",
+        usage_priority = "secondary-input",
+        emissions = 0.005
     },
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
     {
-      sound =
-      {
-        filename = "__base__/sound/electric-furnace.ogg",
-        volume = 0.7
-      },
-      apparent_volume = 1.5
+        sound =
+        {
+            filename = "__base__/sound/electric-furnace.ogg",
+            volume = 0.7
+        },
+        apparent_volume = 1.5
     },
     animation =
     {
@@ -179,6 +190,24 @@ data:extend({
         }
       }
     },
-    fast_replaceable_group = "furnace"
-  }
+	fluid_boxes =
+    {
+      {
+        production_type = "output",
+		pipe_picture = assembler2pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_level = 100,
+		base_area = 100,
+        pipe_connections = {{type="output",position = {0, -2} }}
+      },
+      {
+        production_type = "input",
+		pipe_picture = assembler2pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_level = -100,
+		base_area = 100,
+        pipe_connections = {{type="input", position = {0, 2} }}
+      }
+    }
+}
 })
