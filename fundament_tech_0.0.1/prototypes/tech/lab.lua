@@ -14,18 +14,14 @@ data:extend({
 				type = "unlock-recipe",
 				recipe = "research-center-micro"
 			},
-			{
-				type = "unlock-recipe",
-				recipe = "science-micro-base"
-			}
 		},
 		prerequisites = {"advanced-electronics", "circuit-network"},
 		unit =
 		{
-			count = 100,
+			count = 300,
 			ingredients = {
 				{"science-pack-1", 1},
-				{"science-pack-2", 2}
+				{"science-pack-2", 1}
 			},
 			time = 20
 		},
@@ -35,7 +31,7 @@ data:extend({
 		type = "technology",
 		name = "science-micro-transport",
 		icon_size = 128,
-		icon = thismod .. "tech/tech-lab.png",
+		icon = thismod .. "tech/transport.png",
 		effects =
 		{
 			{
@@ -46,9 +42,9 @@ data:extend({
 		prerequisites = {"tech-lab", "logistics-2"},
 		unit =
 		{
-			count = 100,
+			count = 200,
 			ingredients = {
-				{"science-micro-base", 1},
+				{"science-pack-1", 1},
 				{"science-pack-2", 2}
 			},
 			time = 20
@@ -59,7 +55,7 @@ data:extend({
 		type = "technology",
 		name = "science-micro-mining",
 		icon_size = 128,
-		icon = thismod .. "tech/tech-lab.png",
+		icon = thismod .. "tech/mining.png",
 		effects =
 		{
 			{
@@ -72,7 +68,6 @@ data:extend({
 		{
 			count = 300,
 			ingredients = {
-				{"science-micro-base", 2},
 				{"science-pack-1", 1},
 				{"science-pack-2", 1},
 				{"science-pack-3", 1}

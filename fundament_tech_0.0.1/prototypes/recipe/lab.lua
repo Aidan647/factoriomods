@@ -38,35 +38,6 @@ data:extend({
 	},
 	{
 		type = "recipe",
-		name = "science-micro-base",
-		energy_required = 2,
-		category = "science-micro",
-		normal =
-		{
-			enabled = false,
-			ingredients =
-			{
-				{"iron-gear-wheel", 1},
-				{"copper-plate", 2},
-				{"electronic-circuit", 2}
-			},
-			result = "science-micro-base",
-			result_count = 2
-		},
-		expensive =
-		{
-			enabled = false,
-			ingredients =
-			{
-				{"iron-gear-wheel", 1},
-				{"copper-plate", 2},
-				{"electronic-circuit", 2}
-			},
-			result = "science-micro-base"
-		}
-	},
-	{
-		type = "recipe",
 		name = "science-micro-transport",
 		energy_required = 2,
 		category = "science-micro",
