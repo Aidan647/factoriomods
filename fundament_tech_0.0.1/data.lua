@@ -1,24 +1,21 @@
-thismod = "__fundament_tech__/graphics/"
-entity = {}
-item = {}
-recipe = {}
-tech = {"laser", "drones"}
-all = {"energy", "lab"}
-for i,v in ipairs(entity) do
+require("defines")
+require("prototypes.groups.groups")
+for i,v in ipairs(funtech.entity) do
 require("prototypes.entity." .. v)
 end 
-for i,v in ipairs(item) do
+for i,v in ipairs(funtech.item) do
 require("prototypes.item." .. v)
 end 
-for i,v in ipairs(recipe) do
+for i,v in ipairs(funtech.recipe) do
 require("prototypes.recipe." .. v)
 end 
-for i,v in ipairs(tech) do
+for i,v in ipairs(funtech.tech) do
 require("prototypes.tech." .. v)
 end 
-for i,v in ipairs(all) do
+for i,v in ipairs(funtech.all) do
 require("prototypes.entity." .. v)
 require("prototypes.item." .. v)
 require("prototypes.recipe." .. v)
 require("prototypes.tech." .. v)
 end 
+data:extend(funtech.extend)
