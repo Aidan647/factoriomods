@@ -14,10 +14,14 @@
     },
     {
       "name": "faster_dron_charge",
-      "enabled": false
+      "enabled": true
     },
     {
       "name": "fundament_tech",
+      "enabled": true
+    },
+    {
+      "name": "X100_assembler",
       "enabled": true
     }
   ]
