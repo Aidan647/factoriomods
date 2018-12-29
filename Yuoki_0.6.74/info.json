@@ -1,0 +1,11 @@
+
+{
+  "name": "Yuoki",
+  "version": "0.6.74",
+  "date": "2017-12-30",
+  "title": "Yuoki Industries",
+  "author": "Yuoki Tani",
+  "factorio_version": "0.16",
+  "dependencies": ["base >= 0.16"],
+  "description": "adds more content like generators, ressource-transformations, machinery, turrets ..."
+}

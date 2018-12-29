@@ -1,0 +1,70 @@
+data:extend(
+{
+	{
+		type = "item",
+		name = "y_boiler_sh",
+		 icon_size = 32, icon =  "__Yuoki__/graphics/entity/boiler-sh_icon.png",
+		flags = {"goes-to-quickbar"},
+		group = "Yuoki",
+		subgroup = "y-boiler",
+		order = "b[steam-power]-a2",
+		place_result = "y_boiler_sh",
+		stack_size = 20, default_request_amount = 5, 
+	},	
+	{
+		type = "item",
+		name = "y-boiler-iv",
+		 icon_size = 32, icon =  "__Yuoki__/graphics/icons/boiler-3m-icon.png",
+		flags = {"goes-to-quickbar"},
+		group = "Yuoki",
+		subgroup = "y-boiler",
+		order = "b[steam-power]-a3",
+		place_result = "y-boiler-iv",
+		stack_size = 10, default_request_amount = 5, 
+	},	
+	{
+		type = "item",
+		name = "y-obninsk-reactor",
+		 icon_size = 32, icon =  "__Yuoki__/graphics/icons/obninsk-reactor-icon.png",
+		flags = {"goes-to-quickbar"},
+		group = "Yuoki",
+		subgroup = "y-boiler",
+		order = "b[steam-power]-a4",
+		place_result = "y-obninsk-reactor",
+		stack_size = 5,
+	},
+
+	{
+		type = "item",
+		name = "y-obninsk-turbine",
+		 icon_size = 32, icon =  "__Yuoki__/graphics/icons/rensuir-turbine_icon.png",
+		flags = {"goes-to-quickbar"},
+		group = "yuoki",
+		subgroup = "y-energy-2",		
+		place_result = "y-obninsk-turbine",
+		stack_size = 5,
+	},	
+
+	
+	{
+		type = "item",
+		name = "y-steam-turbine",
+		 icon_size = 32, icon =  "__Yuoki__/graphics/entity/steam_turbine_n3_icon.png",
+		flags = {"goes-to-quickbar"},
+		group = "yuoki",
+		subgroup = "y-energy-2",		
+		place_result = "y-steam-turbine",
+		stack_size = 20, default_request_amount = 5, 
+	},
+	{
+		type = "item",
+		name = "y-notfall-generator-s2",
+		 icon_size = 32, icon =  "__Yuoki__/graphics/entity/energy-t2/lt-v2p-icon.png",
+		flags = {"goes-to-quickbar"},
+		group = "yuoki",
+		subgroup = "y-energy-2",		
+		place_result = "y-notfall-generator-s2",
+		stack_size = 25, default_request_amount = 5, 
+	},
+	
+})
