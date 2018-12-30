@@ -4,6 +4,7 @@ data:extend({
 		name = "X100_Steam",
 		category="X100_smelting",
 		energy_required = 55,
+		subgroup = "X100_subgroup_furnace",
 		enabled = "true",
 		ingredients =
 		{

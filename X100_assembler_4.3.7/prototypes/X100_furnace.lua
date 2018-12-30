@@ -22,7 +22,7 @@ data:extend({
 		type = "furnace",
 		name = "X100_furnace",
 		icon = "__X100_assembler__/graphics/icon/electric-furnace.png",
-	icon_size = 32,
+		icon_size = 32,
 		flags = {"placeable-neutral", "placeable-player", "player-creation"},
 		minable =
 		{
@@ -55,6 +55,7 @@ data:extend({
 		crafting_categories = {"X100_smelting"},
 		result_inventory_size = 5,
 		crafting_speed = 50,
+		ingredient_count = 10,
 		energy_usage = "1MW",
 		source_inventory_size = 1,
 		fast_replaceable_group = "reverse-factory",

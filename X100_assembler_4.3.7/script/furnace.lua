@@ -1,5 +1,6 @@
 require("list")
 --Var
+
 local function first_result_type(recipe, x)
 	local z = "item"
 	local not_item = ezlib.tbl.add(ezlib.item.not_item, "fluid")
@@ -108,7 +109,7 @@ for q,value in ipairs(list_furnace) do
 			for x,y in ipairs(recipe.normal.results) do
 				if recipe.normal.results[x]["amount"] then
 					if recipe.normal.results[x]["amount"] then
-						recipe.normal.results[x]["amount"] = recipe.normal.results[x]["amount"] * 10 or 100
+						recipe.normal.results[x]["amount"] = recipe.normal.results[x]["amount"] * 10 or 10
 					else
 						recipe.normal.results[x]["amount"] = 10
 					end
@@ -146,29 +147,29 @@ for q,value in ipairs(list_furnace) do
 			for x,y in ipairs(recipe.ingredients) do
 				if recipe.ingredients[x]["amount"] then
 					recipe.ingredients[x]["amount"] = recipe.ingredients[x]["amount"] * 10
-					if recipe.ingredients[x]["amount"] >= 100000 then err = 109 end
+					if recipe.ingredients[x]["amount"] >= 50000 then err = 109 end
 				else
 					recipe.ingredients[x][2] = recipe.ingredients[x][2] * 10
-					if recipe.ingredients[x][2] >= 100000 then err = 110 end
+					if recipe.ingredients[x][2] >= 50000 then err = 110 end
 				end
 			end
 		elseif recipe.normal.ingredients then
 			for x,y in ipairs(recipe.normal.ingredients) do
 				if recipe.normal.ingredients[x]["amount"] then
 					recipe.normal.ingredients[x]["amount"] = recipe.normal.ingredients[x]["amount"] * 10
-					if recipe.normal.ingredients[x]["amount"] >= 100000 then err = 111 end
+					if recipe.normal.ingredients[x]["amount"] >= 50000 then err = 111 end
 				else
 					recipe.normal.ingredients[x][2] = recipe.normal.ingredients[x][2] * 10
-					if recipe.normal.ingredients[x][2] >= 100000 then err = 112 end
+					if recipe.normal.ingredients[x][2] >= 50000 then err = 112 end
 				end
 			end
 			for x,y in ipairs(recipe.expensive.ingredients) do
 				if recipe.expensive.ingredients[x]["amount"] then
 					recipe.expensive.ingredients[x]["amount"] = recipe.expensive.ingredients[x]["amount"] * 10
-					if recipe.expensive.ingredients[x]["amount"] >= 100000 then err = 113 end
+					if recipe.expensive.ingredients[x]["amount"] >= 50000 then err = 113 end
 				else
 					recipe.expensive.ingredients[x][2] = recipe.expensive.ingredients[x][2] * 10
-					if recipe.expensive.ingredients[x][2] >= 100000 then err = 114 end
+					if recipe.expensive.ingredients[x][2] >= 50000 then err = 114 end
 				end
 			end
 		else
