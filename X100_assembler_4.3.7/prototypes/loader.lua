@@ -46,7 +46,7 @@ data:extend({
 		starting_bottom = express_belt_starting_bottom,
 		starting_side = express_belt_starting_side,
 		fast_replaceable_group = "loader",
-		speed = 0.5,
+		speed = 1,
 		structure =
 		{
 			direction_in =

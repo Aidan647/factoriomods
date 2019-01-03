@@ -75,7 +75,7 @@ data:extend({
 		starting_bottom = basic_belt_starting_bottom,
 		starting_side = basic_belt_starting_side,
 		fast_replaceable_group = "transport-belt",
-		speed = 0.5,
+		speed = 1,
 		structure =
 		{
 			direction_in =

@@ -119,7 +119,7 @@ data:extend({
 		starting_side = mk5_belt_starting_side,
 		ending_patch = ending_patch_prototype,
 		fast_replaceable_group = "transport-belt",
-		speed = 0.5,
+		speed = 1,
 		structure =
 		{
 			north =
