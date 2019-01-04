@@ -9,12 +9,16 @@
       "enabled": true
     },
     {
+      "name": "error",
+      "enabled": false
+    },
+    {
       "name": "ezlib",
       "enabled": true
     },
     {
       "name": "faster_dron_charge",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "fundament_tech",
