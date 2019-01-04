@@ -32,6 +32,17 @@ data:extend({
 	},
 	{
 		type = "item",
+		name = "research-center-nano",
+		icon = "__base__/graphics/icons/lab.png",
+		icon_size = 32,
+		flags = {"goes-to-main-inventory"},
+		subgroup = "production-machine",
+		order = "z[space-science-pack]",
+		place_result = "research-center-nano",
+		stack_size = 10
+	},
+	{
+		type = "item",
 		name = "tech-lab",
 		icon = "__base__/graphics/icons/lab.png",
 		icon_size = 32,

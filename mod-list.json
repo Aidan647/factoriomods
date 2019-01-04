@@ -22,7 +22,7 @@
     },
     {
       "name": "X100_assembler",
-      "enabled": true
+      "enabled": false
     }
   ]
 }
