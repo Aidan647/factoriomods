@@ -191,9 +191,9 @@ data:extend({
 			enabled = false,
 			ingredients =
 			{
-				{"pipe", 1},
-				{"transport-belt", 1},
-				{"inserter", 1}
+				{"rail", 1},
+				{"fast-transport-belt", 1},
+				{"fast-inserter", 1}
 			},
 			result = "science-nano-transport"
 		},
@@ -202,9 +202,9 @@ data:extend({
 			enabled = false,
 			ingredients =
 			{
-				{"pipe", 1},
-				{"transport-belt", 2},
-				{"inserter", 2}
+				{"rail", 3},
+				{"fast-transport-belt", 2},
+				{"fast-inserter", 2}
 			},
 			result = "science-nano-transport"
 		}
@@ -219,8 +219,8 @@ data:extend({
 			enabled = false,
 			ingredients =
 			{
-				{"burner-mining-drill", 1},
-				{"green-wire", 5}
+				{"electric-mining-drill", 2},
+				{"productivity-module", 3}
 			},
 			result = "science-nano-mining"
 		},
@@ -229,8 +229,8 @@ data:extend({
 			enabled = false,
 			ingredients =
 			{
-				{"burner-mining-drill", 2},
-				{"green-wire", 7}
+				{"electric-mining-drill", 3},
+				{"productivity-module", 5}
 			},
 			result = "science-nano-mining"
 		}
@@ -245,9 +245,9 @@ data:extend({
 			enabled = false,
 			ingredients =
 			{
-				{"electronic-circuit", 7},
-				{"iron-gear-wheel", 4},
-				{"advanced-circuit", 3}
+				{"processing-unit", 2},
+				{"rocket-control-unit", 1},
+				{"red-wire", 4}
 			},
 			result = "science-nano-tech",
 			result_count = 2
@@ -257,9 +257,9 @@ data:extend({
 			enabled = false,
 			ingredients =
 			{
-				{"electronic-circuit", 10},
-				{"iron-gear-wheel", 5},
-				{"advanced-circuit", 5}
+				{"processing-unit", 3},
+				{"rocket-control-unit", 1},
+				{"red-wire", 5}
 			},
 			result = "science-nano-tech"
 		}
@@ -274,8 +274,9 @@ data:extend({
 			enabled = false,
 			ingredients =
 			{
-				{"flying-robot-frame", 1},
-				{"advanced-circuit", 1}
+				{"low-density-structure", 1},
+				{"processing-unit", 1},
+				{"rocket-control-unit", 1}
 			},
 			result = "science-nano-space"
 		},
@@ -284,8 +285,9 @@ data:extend({
 			enabled = false,
 			ingredients =
 			{
-				{"flying-robot-frame", 1},
-				{"advanced-circuit", 4}
+				{"low-density-structure", 2},
+				{"processing-unit", 3},
+				{"rocket-control-unit", 2}
 			},
 			result = "science-nano-space"
 		}

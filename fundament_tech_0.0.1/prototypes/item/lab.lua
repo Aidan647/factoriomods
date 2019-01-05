@@ -4,7 +4,7 @@ for _,x in ipairs(funtech.reports_levels) do
 			type = "tool",
 			name = "science-" .. x .. "-" .. y,
 			localised_description = {"item-description.science-pack"},
-			icon = "__base__/graphics/icons/science-pack-1.png",
+			icon = thismod .. "error/32.png",
 			icon_size = 32,
 			flags = {"goes-to-main-inventory"},
 			subgroup = "science-" .. x,
@@ -22,10 +22,10 @@ data:extend({
 	{
 		type = "item",
 		name = "research-center-micro",
-		icon = "__base__/graphics/icons/lab.png",
+		icons = {{icon = thismod .. "icons/research-center.png"},{icon = thismod .. "type/science-micro_32.png"}},
 		icon_size = 32,
-		flags = {"goes-to-main-inventory"},
-		subgroup = "production-machine",
+		flags = {"goes-to-quickbar"},
+		subgroup = "science-micro",
 		order = "z[space-science-pack]",
 		place_result = "research-center-micro",
 		stack_size = 10
@@ -33,10 +33,10 @@ data:extend({
 	{
 		type = "item",
 		name = "research-center-nano",
-		icon = "__base__/graphics/icons/lab.png",
+		icons = {{icon = thismod .. "icons/research-center.png"},{icon = thismod .. "type/science-nano_32.png"}},
 		icon_size = 32,
-		flags = {"goes-to-main-inventory"},
-		subgroup = "production-machine",
+		flags = {"goes-to-quickbar"},
+		subgroup = "science-nano",
 		order = "z[space-science-pack]",
 		place_result = "research-center-nano",
 		stack_size = 10
@@ -47,7 +47,7 @@ data:extend({
 		icon = "__base__/graphics/icons/lab.png",
 		icon_size = 32,
 		flags = {"goes-to-quickbar"},
-		subgroup = "science-pack",
+		subgroup = "production-machine",
 		order = "z[tech-lab]",
 		place_result = "tech-lab",
 		stack_size = 10

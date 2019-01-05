@@ -2,6 +2,8 @@ data:extend({
 	{
 		type = "recipe",
 		name = "space-solar-panel",
+		icon = thismod .. "icons/space-solar-panel.png",
+		icon_size = 64,
 		energy_required = 30,
 		enabled = false,
 		ingredients =

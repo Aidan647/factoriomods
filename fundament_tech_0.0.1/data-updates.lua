@@ -24,18 +24,32 @@ local prerequisites = {
 	{"nuclear-power", "science-micro-tech"},
 	{"fusion-reactor-equipment", "science-micro-tech"},
 	{"power-armor", "science-micro-tech"},
+
+
+	{"kovarex-enrichment-process", "science-nano-tech-2"},
+	{"mining-productivity-16", "science-nano-tech-2"},
+
+	{"braking-force-8", "science-nano-transport-2"},
+	{"worker-robots-speed-6", "science-nano-transport-2"},
+	{"mining-productivity-16", "science-nano-transport-2"},
+
+	{"productivity-module-3", "science-nano-mining"},
+
+	{"rocket-silo", "science-micro-space"},
 }
 local add_micro = {
 	{"braking-force", "transport"},
 	{"inserter-capacity-bonus", "transport"},
 
 	{"inserter-capacity-bonus", "mining", 3},
+	{"mining-productivity", "mining"},
 
 	{"power-armor", "tech"},
 	{"speed-module", "tech"},
 	{"effectivity-module", "tech"},
 	{"productivity-module", "tech"},
 }
+
 local add_micro_transport = {
 	{"railway", 1},
 	{"automobilism", 1},
@@ -52,6 +66,25 @@ local add_micro_mining = {
 local add_micro_tech = {
 	{"nuclear-power", 1},
 	{"fusion-reactor-equipment", 2},
+}
+local add_micro_space = {
+	{"rocket-silo", 1},
+}
+
+
+local add_nano_transport = {
+	{"braking-force-8", 1},
+	{"worker-robots-speed-6", 1},
+}
+local add_nano_mining = {
+	{"kovarex-enrichment-process", 1},
+	{"mining-productivity-16", 1},
+	{"productivity-module-3", 1},
+}
+local add_nano_tech = {
+	{"mining-productivity-16", 1},
+}
+local add_nano_space = {
 }
 
 while x <= 30 do
@@ -85,6 +118,22 @@ end
 for i,v in ipairs(add_micro_tech) do
 	table.insert(data.raw.technology[v[1]].unit.ingredients, {"science-micro-tech", v[2]})
 end
+for i,v in ipairs(add_micro_space) do
+	table.insert(data.raw.technology[v[1]].unit.ingredients, {"science-micro-space", v[2]})
+end
+
+for i,v in ipairs(add_nano_transport) do
+	table.insert(data.raw.technology[v[1]].unit.ingredients, {"science-nano-transport", v[2]})
+end
+for i,v in ipairs(add_nano_mining) do
+	table.insert(data.raw.technology[v[1]].unit.ingredients, {"science-nano-mining", v[2]})
+end
+for i,v in ipairs(add_nano_tech) do
+	table.insert(data.raw.technology[v[1]].unit.ingredients, {"science-nano-tech", v[2]})
+end
+for i,v in ipairs(add_nano_space) do
+	table.insert(data.raw.technology[v[1]].unit.ingredients, {"science-nano-space", v[2]})
+end
 
 
 
@@ -98,17 +147,24 @@ ezlib.tech.remove.prerequisites("nuclear-power", "advanced-electronics")
 
 --		Icons		--
 data.raw.item.satellite.icons = {{icon = thismod .. "icons/satellite.png"},{icon = thismod .. "type/space-icon.png"}}
+data.raw.recipe.satellite.icon = thismod .. "icons/satellite.png"
+data.raw.recipe.satellite.icon_size = 64
 data.raw.item.satellite.icon_size = 64
 data.raw.item.satellite.icon = nil
 
 --		Belts		--
-
-data.raw.item["underground-belt"].subgroup = "underground-belt"
-data.raw.item["fast-underground-belt"].subgroup = "underground-belt"
-data.raw.item["express-underground-belt"].subgroup = "underground-belt"
-data.raw.item["splitter"].subgroup = "splitter"
-data.raw.item["fast-splitter"].subgroup = "splitter"
-data.raw.item["express-splitter"].subgroup = "splitter"
-data.raw.item["loader"].subgroup = "loader"
-data.raw.item["fast-loader"].subgroup = "loader"
-data.raw.item["express-loader"].subgroup = "loader"
+if data.raw.item["underground-belt"].subgroup == "belt" then
+	data.raw.item["underground-belt"].subgroup = "underground-belt"
+	data.raw.item["fast-underground-belt"].subgroup = "underground-belt"
+	data.raw.item["express-underground-belt"].subgroup = "underground-belt"
+end
+if data.raw.item["splitter"].subgroup == "belt" then
+	data.raw.item["splitter"].subgroup = "splitter"
+	data.raw.item["fast-splitter"].subgroup = "splitter"
+	data.raw.item["express-splitter"].subgroup = "splitter"
+end
+if data.raw.item["loader"].subgroup == "belt" then
+	data.raw.item["loader"].subgroup = "loader"
+	data.raw.item["fast-loader"].subgroup = "loader"
+	data.raw.item["express-loader"].subgroup = "loader"
+end

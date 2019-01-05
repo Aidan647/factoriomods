@@ -6,16 +6,14 @@ data:extend({
     enabled = true,
     ingredients =
     {
-      {"steel-plate", 1}
+      
     },
-    result= "green_screen"
+    result = "green_screen"
   },
   {
     type = "item",
     name = "green_screen",
-	icons ={
-		{icon = "__base__/graphics/icons/concrete.png"},
-	},
+	icon = "__ezlib__/graphics/terrain/concrete/hazard-concrete-o-mask.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "terrain",
@@ -24,18 +22,18 @@ data:extend({
     place_as_tile =
     {
       result = "green_screen",
-      condition_size = 1,
-      condition = { "water-tile" }
+      condition_size = 0,
+      condition = {}
     }
   },
 {
 	type = "tile",
 	name = "green_screen",
 	needs_correction = false,
-	minable = {hardness = 0.2, mining_time = 0.5, result = "concrete"},
+	minable = {hardness = 0, mining_time = 0, result = "green_screen"},
 	mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
 	collision_mask = {"ground-tile"},
-	walking_speed_modifier = 1.4,
+	walking_speed_modifier = 2,
 	layer = 61,
 	transition_overlay_layer_offset = 2, -- need to render border overlay on top of hazard-concrete
 	decorative_removal_probability = 0.25,

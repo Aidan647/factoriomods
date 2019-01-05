@@ -2,10 +2,10 @@ data:extend({
 	{
 		type = "technology",
 		name = "space-solar-panel",
-		icon_size = 128, 
+		icon_size = 256, 
 		icons = { 
-			{icon = "__base__/graphics/technology/solar-energy.png"},
-			{icon = thismod .. "type/space.png"}
+			{icon = thismod .. "tech/space_solar_panel.png"},
+			{icon = thismod .. "type/space_256.png"}
 			},
 		effects =
 		{
@@ -14,12 +14,14 @@ data:extend({
 				recipe = "space-solar-panel"
 			}
 		},
-		prerequisites = {"rocket-silo", "solar-energy", "laser-2"},
+		prerequisites = {"rocket-silo", "solar-energy", "laser-2", "science-nano-mining-2", "science-nano-space-2"},
 		unit =
 		{
 			count = 100,
 			ingredients =
 			{
+				{"science-nano-mining", 1},
+				{"science-nano-space", 1},
 				{"science-pack-1", 1},
 				{"science-pack-2", 1},
 				{"science-pack-3", 1},

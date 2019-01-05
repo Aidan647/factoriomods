@@ -2,7 +2,7 @@ data:extend({
 	{
 		type = "item",
 		name = "space-solar-panel",
-		icons = {{icon = thismod .. "icons/space-solar-panel.png"},{icon = thismod .. "type/space-icon.png"}},
+		icons = {{icon = thismod .. "icons/space-solar-panel.png"},{icon = thismod .. "type/space-icon_R.png"}},
 		icon_size = 64,
 		flags = {"goes-to-main-inventory"},
 		subgroup = "intermediate-product",
@@ -19,6 +19,7 @@ data:extend({
 		subgroup = "intermediate-product",
 		order = "m[satellite]",
 		stack_size = 10,
+		localised_description = {"ezlib.power-output", "100MW"},
 		place_result = "space-solar-panel-reciver"
 	}
 })
