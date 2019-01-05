@@ -18,9 +18,6 @@ data:extend({
 	{
 		type = "recipe",
 		name = "X100_lab",
-		category="X100_smelting",
-		energy_required = 55,
-		subgroup = "X100_subgroup_furnace",
 		enabled = "true",
 		ingredients =
 		{

@@ -5,6 +5,10 @@
       "enabled": true
     },
     {
+      "name": "auto-research",
+      "enabled": true
+    },
+    {
       "name": "creative-mode-fix",
       "enabled": true
     },
