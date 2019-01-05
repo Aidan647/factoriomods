@@ -44,8 +44,5 @@ data:extend(
 		group = "X100_group_furnace",
 		order = "a"
 	}
-	
-	
-	
  
 })

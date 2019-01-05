@@ -2,7 +2,10 @@ data:extend({
     {
         type = "item",
         name = "X100-inserter",
-        icon = "__X100_assembler__/graphics/inserter.png",
+		icons ={
+			{icon = "__X100_assembler__/graphics/inserter.png"},
+			{icon = "__X100_assembler__/graphics/icons.png"}
+		},
         icon_size = 32,
         flags = {"goes-to-quickbar"},
         subgroup = "inserter",
@@ -13,7 +16,10 @@ data:extend({
     {
         type = "item",
         name = "X100-long-inserter",
-        icon = "__X100_assembler__/graphics/long-inserter.png",
+		icons ={
+			{icon = "__X100_assembler__/graphics/long-inserter.png"},
+			{icon = "__X100_assembler__/graphics/icons.png"}
+		},
         icon_size = 32,
         flags = {"goes-to-quickbar"},
         subgroup = "inserter",
@@ -24,7 +30,10 @@ data:extend({
     {
         type = "item",
         name = "X100-filter-inserter",
-        icon = "__X100_assembler__/graphics/filter-inserter.png",
+		icons ={
+			{icon = "__X100_assembler__/graphics/filter-inserter.png"},
+			{icon = "__X100_assembler__/graphics/icons.png"}
+		},
         icon_size = 32,
         flags = {"goes-to-quickbar"},
         subgroup = "inserter",
@@ -35,7 +44,10 @@ data:extend({
     {
         type = "item",
         name = "X100-long-filter-inserter",
-        icon = "__X100_assembler__/graphics/long-filter-inserter.png",
+		icons ={
+			{icon = "__X100_assembler__/graphics/long-filter-inserter.png"},
+			{icon = "__X100_assembler__/graphics/icons.png"}
+		},
         icon_size = 32,
         flags = {"goes-to-quickbar"},
         subgroup = "inserter",

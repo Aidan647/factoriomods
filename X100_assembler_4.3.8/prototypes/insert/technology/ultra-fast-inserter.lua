@@ -2,7 +2,10 @@ data:extend({
   {
     type = "technology",
     name = "X100-inserter",
-    icon = "__base__/graphics/technology/stack-inserter.png",
+	icons ={
+		{icon = "__base__/graphics/technology/stack-inserter.png"},
+		{icon = "__X100_assembler__/graphics/logo.png"}
+	},
     icon_size = 128,
     effects =
     {

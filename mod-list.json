@@ -5,6 +5,22 @@
       "enabled": true
     },
     {
+      "name": "5dim_core",
+      "enabled": false
+    },
+    {
+      "name": "5dim_logistic",
+      "enabled": false
+    },
+    {
+      "name": "boblibrary",
+      "enabled": true
+    },
+    {
+      "name": "boblogistics",
+      "enabled": true
+    },
+    {
       "name": "creative-mode-fix",
       "enabled": true
     },
