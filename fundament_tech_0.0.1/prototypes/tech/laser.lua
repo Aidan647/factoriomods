@@ -4,7 +4,7 @@ data:extend({
 		name = "laser-2",
 		icon_size = 128,
 		icon = "__base__/graphics/technology/laser.png",
-		prerequisites = {"laser", "advanced-electronics"},
+		prerequisites = {"laser", "science-micro-tech"},
 		unit =
 		{
 			count = 200,
