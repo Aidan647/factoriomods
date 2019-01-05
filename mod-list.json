@@ -34,7 +34,7 @@
     },
     {
       "name": "faster_dron_charge",
-      "enabled": false
+      "enabled": true
     },
     {
       "name": "fundament_tech",
@@ -42,7 +42,7 @@
     },
     {
       "name": "X100_assembler",
-      "enabled": false
+      "enabled": true
     }
   ]
 }

@@ -9,7 +9,7 @@ for x,y in ipairs(ls_pipe2) do
 	data.raw["pipe-to-ground"][y].collision_mask = {"object-layer"}
 end
 if data.raw.item["express-transport-belt"].subgroup ~= "belt" then
-	if data.raw.item["express-transport-belt"].subgroup == data.raw.item["express-splitter"].subgroup then
+	if data.raw.item["express-transport-belt"].subgroup ~= data.raw.item["fast-transport-belt"].subgroup then
 	log("3423423")
 			data:extend({
 			{
@@ -17,12 +17,8 @@ if data.raw.item["express-transport-belt"].subgroup ~= "belt" then
 				name	= data.raw.item["express-transport-belt"].subgroup .. "X100",
 				order	= data.raw["item-subgroup"][data.raw.item["express-transport-belt"].subgroup].order,
 				group	= data.raw["item-subgroup"][data.raw.item["express-transport-belt"].subgroup].group,
-			},			{
-				type	= "item-subgroup",
-				name	= data.raw.item["pipe"].subgroup .. "X100",
-				order	= data.raw["item-subgroup"][data.raw.item["pipe"].subgroup].order,
-				group	= data.raw["item-subgroup"][data.raw.item["pipe"].subgroup].group,
-			},			{
+			},
+			{
 				type	= "item-subgroup",
 				name	= data.raw.item["stack-inserter"].subgroup .. "X100",
 				order	= data.raw["item-subgroup"][data.raw.item["stack-inserter"].subgroup].order,
@@ -36,8 +32,8 @@ if data.raw.item["express-transport-belt"].subgroup ~= "belt" then
 		data.raw.item["transport_ground_X100_chanal1"].subgroup	= data.raw.item["express-transport-belt"].subgroup .. "X100"
 		data.raw.item["splitter_X100"].subgroup 				= data.raw.item["express-transport-belt"].subgroup .. "X100"
 		data.raw.item["loader_X100"].subgroup					= data.raw.item["express-transport-belt"].subgroup  .. "X100"
-		data.raw.item["X100_pipe-ground"].subgroup				= data.raw.item["pipe"].subgroup .. "X100"
-		data.raw.item["X100_pipe"].subgroup						= data.raw.item["pipe"].subgroup .. "X100"
+		data.raw.item["X100_pipe-ground"].subgroup				= data.raw.item["pipe"].subgroup
+		data.raw.item["X100_pipe"].subgroup						= data.raw.item["pipe"].subgroup
 		data.raw.item["X100-inserter"].subgroup					= data.raw.item["stack-inserter"].subgroup .. "X100"
 		data.raw.item["X100-long-inserter"].subgroup 			= data.raw.item["stack-inserter"].subgroup .. "X100"
 		data.raw.item["X100-filter-inserter"].subgroup 			= data.raw.item["stack-inserter"].subgroup .. "X100"
@@ -169,8 +165,7 @@ else
 	data.raw.item["X100-filter-inserter"].order 			= data.raw.item["stack-filter-inserter"].order .. 'z' 
 	data.raw.item["X100-long-filter-inserter"].order 		= data.raw.item["filter-inserter"].order .. 'z' 
 	data.raw.item["splitter_X100"].order 					= data.raw.item["express-splitter"].order .. 'z'
-	ezlib.log.print(data.raw.item["transport_belt_X100"].subgroup)
+
 	log("434234")	
 end
-	ezlib.log.print(data.raw.item["transport_belt_X100"].subgroup)
 	log("434234")
