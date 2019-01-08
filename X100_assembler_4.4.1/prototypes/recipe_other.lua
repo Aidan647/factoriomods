@@ -15,6 +15,19 @@ data:extend({
 			{type="fluid", name="steam", amount=1000,temperature=99.5}
 		}
 	},
+	{
+		type = "recipe",
+		name = "X100_lab",
+		enabled = "true",
+		ingredients =
+		{
+			{type="item", name="lab", amount=100}
+		},
+		results=
+		{
+			{type="item", name="X100_lab", amount=1}
+		}
+	},
 	 {
 		type = "recipe",
 		name = "X100_offshore_pump",

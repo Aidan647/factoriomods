@@ -147,29 +147,29 @@ for q,value in ipairs(list_assemdler) do
 			for x,y in ipairs(recipe.ingredients) do
 				if recipe.ingredients[x]["amount"] then
 					recipe.ingredients[x]["amount"] = recipe.ingredients[x]["amount"] * 100
-					if recipe.ingredients[x]["amount"] >= 50000 then err = 109 end
+					if recipe.ingredients[x]["amount"] >= 65500 then err = 109 end
 				else
 					recipe.ingredients[x][2] = recipe.ingredients[x][2] * 100
-					if recipe.ingredients[x][2] >= 50000 then err = 110 end
+					if recipe.ingredients[x][2] >= 65500 then err = 110 end
 				end
 			end
 		elseif recipe.normal.ingredients then
 			for x,y in ipairs(recipe.normal.ingredients) do
 				if recipe.normal.ingredients[x]["amount"] then
 					recipe.normal.ingredients[x]["amount"] = recipe.normal.ingredients[x]["amount"] * 100
-					if recipe.normal.ingredients[x]["amount"] >= 50000 then err = 111 end
+					if recipe.normal.ingredients[x]["amount"] >= 65500 then err = 111 end
 				else
 					recipe.normal.ingredients[x][2] = recipe.normal.ingredients[x][2] * 100
-					if recipe.normal.ingredients[x][2] >= 50000 then err = 112 end
+					if recipe.normal.ingredients[x][2] >= 65500 then err = 112 end
 				end
 			end
 			for x,y in ipairs(recipe.expensive.ingredients) do
 				if recipe.expensive.ingredients[x]["amount"] then
 					recipe.expensive.ingredients[x]["amount"] = recipe.expensive.ingredients[x]["amount"] * 100
-					if recipe.expensive.ingredients[x]["amount"] >= 50000 then err = 113 end
+					if recipe.expensive.ingredients[x]["amount"] >= 65500 then err = 113 end
 				else
 					recipe.expensive.ingredients[x][2] = recipe.expensive.ingredients[x][2] * 100
-					if recipe.expensive.ingredients[x][2] >= 50000 then err = 114 end
+					if recipe.expensive.ingredients[x][2] >= 65500 then err = 114 end
 				end
 			end
 		else
@@ -231,7 +231,7 @@ for q,value in ipairs(list_assemdler) do
 					end
 				end
 				if #recipe.normal.results > 1 then
-					recipe.localised_name = value.localised_name or value
+					recipe.localised_name = value.localised_name or recipe.results[1][1].localised_name or recipe.results[1]["name"].localised_name
 				end
 			end
 			if case == 11 then
@@ -256,7 +256,7 @@ for q,value in ipairs(list_assemdler) do
 				end
 			end
 			if #recipe.results > 1 then
-				recipe.localised_name = value.localised_name or value
+				recipe.localised_name = value.localised_name or recipe.results[1][1].localised_name or recipe.results[1]["name"].localised_name
 			end
 		end
 	--local order_group, group, order_subgroup, subgroup, order
