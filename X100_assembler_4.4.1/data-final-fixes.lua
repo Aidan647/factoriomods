@@ -1,5 +1,12 @@
 require("script.furnace")
 require("script.assembler")
+
+if settings.startup["replstats-speed-base"] then
+require("prototypes.X100_replicator")
+require("script.replicator")
+end
+
+
 local ls_pipe1 = ezlib.entity.get.list('pipe')
 local ls_pipe2 = ezlib.entity.get.list('pipe-to-ground')
 for x,y in ipairs(ls_pipe1) do	

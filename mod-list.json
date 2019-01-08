@@ -14,7 +14,7 @@
     },
     {
       "name": "dark-matter-replicators",
-      "enabled": false
+      "enabled": true
     },
     {
       "name": "error",

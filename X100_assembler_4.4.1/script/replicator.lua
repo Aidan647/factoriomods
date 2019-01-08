@@ -26,7 +26,7 @@ local function first_result_type(recipe, x)
 	end
 	return z
 end
-for q,value in ipairs(list_assemdler) do
+for q,value in ipairs(list_replicator) do
 	local err = nil
 	local z = nil
 	local zz = nil
@@ -287,10 +287,10 @@ for q,value in ipairs(list_assemdler) do
 	end
 	if not err then
 		recipe.crafting_machine_tint = nil
-		recipe.category ="X100_assembler"
+		recipe.category ="X100_replicator"
 		name = "_X100_"..value
 		recipe.name = name
-		recipe.subgroup = "X100_subgroup_assembler"
+		recipe.subgroup = "X100_subgroup_replicator"
 		data:extend({recipe})
 		ezlib.remove ("recipe", name)
 		if ezlib.debug then
