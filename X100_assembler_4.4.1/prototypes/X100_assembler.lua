@@ -7,10 +7,10 @@ data:extend({
 	{
 		type = "item",
 		name = "X100_assembler",
-	icons ={
-	{icon = "__X100_assembler__/graphics/icon/X100_assembler.png"},
-	{icon = "__X100_assembler__/graphics/icons.png"}
-	},
+		icons ={
+		{icon = "__X100_assembler__/graphics/icon/X100_assembler.png"},
+		{icon = "__X100_assembler__/graphics/icons.png"}
+		},
 		icon_size = 32,
 		flags = {"goes-to-quickbar"},
 		subgroup = "production-machine",
@@ -228,3 +228,5 @@ data:extend({
 	
 	
 })
+
+ezlib.log.print(dar)

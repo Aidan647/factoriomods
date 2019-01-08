@@ -38,11 +38,11 @@ data:extend(
 		icon = "__X100_assembler__/graphics/technology/groupfurn.png",
 		icon_size = 128
 	},
+
 	{
 		type = "item-subgroup",
 		name = "X100_subgroup_furnace",
 		group = "X100_group_furnace",
 		order = "a"
-	}
- 
+	},
 })

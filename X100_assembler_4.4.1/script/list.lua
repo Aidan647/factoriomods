@@ -43,19 +43,16 @@ repltypes = {
 
 del_list1 = ezlib.recipe.get.list({category = "smelting"})
 del_list2 = ezlib.recipe.get.list({category = "X100_smelting"})
-del_list3 = ezlib.recipe.get.list({subgroup = "replication-resources"})
-del_list4 = ezlib.recipe.get.list({subgroup = "replicators"})
 del_list = ezlib.tbl.add(del_list1,del_list2)
 del_list5 = {}
 for name,repltype in pairs(repltypes) do
 del_list6 = ezlib.recipe.get.list({subgroup = "replication-recipes-"..name})
 del_list = ezlib.tbl.add(del_list,del_list6)
-del_list5 = ezlib.tbl.add(del_list6)
+del_list5 = ezlib.tbl.add(del_list5,del_list6)
 end
-list_assemdler	 = ezlib.tbl.remove(ezlib.recipe.get.list(), del_list)
-list_furnace	 = ezlib.recipe.get.list({category = "smelting"})
+list_assemdler	= ezlib.tbl.remove(ezlib.recipe.get.list(), del_list)
+list_furnace	= ezlib.recipe.get.list({category = "smelting"})
 list_replicator = del_list5
-
 
 
 
