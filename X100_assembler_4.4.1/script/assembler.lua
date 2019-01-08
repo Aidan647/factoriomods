@@ -231,7 +231,7 @@ for q,value in ipairs(list_assemdler) do
 					end
 				end
 				if #recipe.normal.results > 1 then
-					recipe.localised_name = value.localised_name or value
+					recipe.localised_name = value.localised_name or recipe.results[1][1].localised_name or recipe.results[1]["name"].localised_name
 				end
 			end
 			if case == 11 then
@@ -256,7 +256,7 @@ for q,value in ipairs(list_assemdler) do
 				end
 			end
 			if #recipe.results > 1 then
-				recipe.localised_name = value.localised_name or value
+				recipe.localised_name = value.localised_name or recipe.results[1][1].localised_name or recipe.results[1]["name"].localised_name
 			end
 		end
 	--local order_group, group, order_subgroup, subgroup, order

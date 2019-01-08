@@ -13,6 +13,10 @@
       "enabled": true
     },
     {
+      "name": "dark-matter-replicators",
+      "enabled": false
+    },
+    {
       "name": "error",
       "enabled": false
     },
@@ -22,11 +26,11 @@
     },
     {
       "name": "faster_dron_charge",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "fundament_tech",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "X100_assembler",

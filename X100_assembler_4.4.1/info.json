@@ -1,11 +1,11 @@
 {
 		"name": "X100_assembler",
-		"version": "4.3.9",
+		"version": "4.4.1",
 		"factorio_version": "0.16",
 		"title": "X100_assembler",
 		"author": "Traineratwot",
 		"contact": "Traineratwot@yandex.ru",
 		"homepage": "https://mods.factorio.com/mod/X100_assembler",
 		"description": "this mod adds an Assembly machine with a speed of 4x and a chip production speed of 100x",
-	"dependencies": ["base","ezlib >= 0.0.10","?omnilib", "?boblogistics","?bobelectronics","?bobtech","?angelssmelting","?angelsrefining","?crafting-efficiency","?LoaderRedux","?5dim_core","?boblibrary"]
+	"dependencies": ["base","ezlib >= 0.0.10","?omnilib", "?boblogistics","?bobelectronics","?bobtech","?angelssmelting","?angelsrefining","?crafting-efficiency","?LoaderRedux","?5dim_core","?boblibrary","?dark-matter-replicators >= 0.7.9"]
 }

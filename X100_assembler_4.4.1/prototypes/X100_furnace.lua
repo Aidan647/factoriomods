@@ -51,14 +51,14 @@ data:extend({
 			module_slots = 4,
 			module_info_icon_shift = {0, 0.8}
 		},
-		allowed_effects = {"consumption", "speed", "pollution"},
+		allowed_effects = {"consumption", "speed", "productivity", "pollution"},
 		crafting_categories = {"X100_smelting"},
 		result_inventory_size = 5,
-		crafting_speed = 50,
+		crafting_speed = 100,
 		ingredient_count = 10,
 		energy_usage = "1MW",
 		source_inventory_size = 1,
-		fast_replaceable_group = "reverse-factory",
+		fast_replaceable_group = "furnace",
 		energy_source =
 		{
 				type = "electric",

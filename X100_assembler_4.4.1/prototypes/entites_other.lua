@@ -16,16 +16,16 @@ data:extend({
 {
 		type = "offshore-pump",
 		name = "X100_offshore_pump",
-	icons ={
-	{icon = "__base__/graphics/icons/offshore-pump.png"},
-	{icon = "__X100_assembler__/graphics/icons.png"}
-	},
+		icons ={
+		{icon = "__base__/graphics/icons/offshore-pump.png"},
+		{icon = "__X100_assembler__/graphics/icons.png"}
+		},
 		icon_size = 32,
 		flags = {"placeable-neutral", "player-creation", "filter-directions"},
 		collision_mask = { "ground-tile", "object-layer" },
 		fluid_box_tile_collision_test = { "ground-tile" },
 		adjacent_tile_collision_test = { "water-tile" },
-		minable = {mining_time = 1, result = "offshore-pump"},
+		minable = {mining_time = 1, result = "X100_offshore_pump"},
 		max_health = 150,
 		corpse = "small-remnants",
 		fluid = "water",
@@ -132,7 +132,7 @@ data:extend({
 		icon = "__base__/graphics/icons/pump.png",
 		icon_size = 32,
 		flags = {"placeable-neutral", "player-creation"},
-		minable = {mining_time = 1, result = "pump"},
+		minable = {mining_time = 1, result = "X100_pump"},
 		max_health = 180,
 		fast_replaceable_group = "pipe",
 		corpse = "small-remnants",
