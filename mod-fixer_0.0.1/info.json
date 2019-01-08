@@ -1,0 +1,11 @@
+{
+    "name": "mod-fixer",
+    "version": "0.0.12",
+    "factorio_version": "0.16",
+    "title": "Mod-Fixer",
+    "author": "Aidan647",
+    "contact": "kirillkotka@gmail.com",
+    "homepage": "https://mods.factorio.com/mods",
+    "description": "",
+    "dependencies": ["base"]
+}

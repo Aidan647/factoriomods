@@ -318,6 +318,9 @@ for q,value in ipairs(list_assemdler) do
 			end
 		elseif not recipe.localised_description then
 			recipe.localised_description = {"recipe-description." .. value}
+			if result_type == "fluid" then
+				recipe.localised_name = {"fluid-name." .. result_name}
+			end
 		end
 
 	--local order_group, group, order_subgroup, subgroup, order
