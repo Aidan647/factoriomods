@@ -26,4 +26,3 @@ else
 	require("prototypes.tech")
 end
 require("require")
-ezlib.log.print(data.raw.mods)

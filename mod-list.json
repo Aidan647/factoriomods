@@ -1,6 +1,5 @@
 {
   "mods": [
-<<<<<<< HEAD
     {
       "name": "base",
       "enabled": true
@@ -27,18 +26,15 @@
     },
     {
       "name": "faster_dron_charge",
-      "enabled": false
+      "enabled": true
     },
     {
       "name": "fundament_tech",
-      "enabled": false
+      "enabled": true
     },
     {
       "name": "X100_assembler",
       "enabled": true
     }
-=======
-    
->>>>>>> 235a8691221adc34775729c3c6ed5655fbb0b597
   ]
 }
