@@ -5,19 +5,51 @@
       "enabled": true
     },
     {
-      "name": "5dim_core",
-      "enabled": false
+      "name": "bob-basic-belt-reskin",
+      "enabled": true
     },
     {
-      "name": "5dim_logistic",
-      "enabled": false
+      "name": "bobenemies",
+      "enabled": true
+    },
+    {
+      "name": "bobgreenhouse",
+      "enabled": true
     },
     {
       "name": "boblibrary",
       "enabled": true
     },
     {
+      "name": "boblocale",
+      "enabled": true
+    },
+    {
       "name": "boblogistics",
+      "enabled": true
+    },
+    {
+      "name": "bobmining",
+      "enabled": true
+    },
+    {
+      "name": "bobmods_gfxtweak",
+      "enabled": true
+    },
+    {
+      "name": "bobmodules",
+      "enabled": true
+    },
+    {
+      "name": "bobores",
+      "enabled": true
+    },
+    {
+      "name": "bobplates",
+      "enabled": true
+    },
+    {
+      "name": "bobpower",
       "enabled": true
     },
     {
