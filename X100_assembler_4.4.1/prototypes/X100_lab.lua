@@ -175,11 +175,15 @@ data:extend({
 		},
 		energy_usage = "1000kW",
 		researching_speed = 100,
-		inputs = {
-			"tenemut",
-			"dark-matter-scoop",
-			"dark-matter-transducer",
-			"matter-conduit"
+		inputs =
+		{
+			"science-pack-1",
+			"science-pack-2",
+			"science-pack-3",
+			"military-science-pack",
+			"production-science-pack",
+			"high-tech-science-pack",
+			"space-science-pack"
 		},	
 		module_specification =
 		{
