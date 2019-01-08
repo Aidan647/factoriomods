@@ -28,19 +28,6 @@ data:extend({
 			{type="item", name="X100_lab", amount=1}
 		}
 	},
-	{
-		type = "recipe",
-		name = "X100_replicator_lab",
-		enabled = "true",
-		ingredients =
-		{
-			{type="item", name="replication-lab", amount=100}
-		},
-		results=
-		{
-			{type="item", name="X100_replicator_lab", amount=1}
-		}
-	},
 	 {
 		type = "recipe",
 		name = "X100_offshore_pump",

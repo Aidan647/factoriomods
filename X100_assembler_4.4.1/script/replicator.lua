@@ -285,6 +285,42 @@ for q,value in ipairs(list_replicator) do
 	else
 		err = 0
 	end
+	
+	result_type = fresult_type(result_name)
+		if case == 11 then
+			lenght = #recipe.results
+		end
+		if case == 21 then
+			lenght = #recipe.normal.results
+		end
+		if not recipe.localised_name and lenght ~= 1 then
+			if data.raw[result_type][result_name] then
+				if data.raw[result_type][result_name].localised_name then
+					recipe.localised_name = data.raw[result_type][result_name].localised_name
+				elseif result_type == "fluid" then
+					recipe.localised_name = {"fluid-name." .. result_name}
+				elseif data.raw[result_type][result_name].place_result then
+					recipe.localised_name = {"entity-name." .. data.raw[result_type][result_name].place_result}
+					recipe.localised_description = {"entity-description." .. data.raw[result_type][result_name].place_result}
+				elseif data.raw[result_type][result_name].placed_as_equipment_result then
+					recipe.localised_name = {"equipment-name." .. data.raw[result_type][result_name].placed_as_equipment_result}
+					recipe.localised_description = {"equipment-description." .. data.raw[result_type][result_name].placed_as_equipment_result}
+				else
+					recipe.localised_name = {"item-name." .. result_name}
+					recipe.localised_description = {"item-description." .. result_name}
+					if ezlib.debug then
+						log(result_name .. 33333)
+					end
+				end
+			else
+				if ezlib.debug then
+					log(result_type .. "    " .. result_name .. "  44444")
+				end
+			end
+		elseif not recipe.localised_description then
+			recipe.localised_description = {"recipe-description." .. value}
+		end
+	
 	if not err then
 		recipe.crafting_machine_tint = nil
 		recipe.category ="X100_replicator"

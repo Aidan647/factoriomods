@@ -1,5 +1,35 @@
 data:extend({
 	{
+		type = "recipe",
+		name = "X100_replicator_lab",
+		enabled = "true",
+		subgroup = data.raw.item["replication-lab"].subgroup,
+		order = data.raw.item["replication-lab"].order,
+		ingredients =
+		{
+			{type="item", name="replication-lab", amount=100}
+		},
+		results=
+		{
+			{type="item", name="X100_replicator_lab", amount=1}
+		}
+	},
+	{
+		type = "recipe",
+		name = "X100_replicator",
+		enabled = "true",
+		subgroup = data.raw.item["replicator-5"].subgroup,
+		order = data.raw.item["replicator-5"].order,
+		ingredients =
+		{
+			{type="item", name="replicator-5", amount=100}
+		},
+		results=
+		{
+			{type="item", name="X100_replicator", amount=1}
+		}
+	},
+	{
 		type = "item-group",
 		name = "X100_group_replicator",
 		order = "zz",
@@ -19,7 +49,6 @@ data:extend({
 		type = "recipe-category",
 		name = "X100_replicator"
 	},
-	-- Item
 	{
 		type = "item",
 		name = "X100_replicator",
@@ -29,12 +58,9 @@ data:extend({
 		},
 		icon_size = 32,
 		flags = {"goes-to-quickbar"},
-		subgroup = "production-machine",
-		order = "e",
 		place_result = "X100_replicator",
 		stack_size = 200
 	},
-
 	{
 		type = "assembling-machine",
 		name = "X100_replicator",
@@ -115,7 +141,7 @@ data:extend({
 		},
 		allowed_effects = {"consumption", "speed", "productivity", "pollution"}
 	},
-		{
+	{
 		type = "item",
 		name = "X100_replicator_lab",
 		icons ={
@@ -124,8 +150,6 @@ data:extend({
 		},
 		icon_size = 32,
 		flags = {"goes-to-quickbar"},
-		subgroup = data.raw.item["lab"].subgroup,
-		order = data.raw.item["lab"].order .. "z",
 		place_result = "X100_replicator_lab",
 		stack_size = 500
 	},
@@ -290,7 +314,6 @@ data:extend({
 		},
 		energy_usage = "1000kW",
 		researching_speed = 100,
-		inputs =
 		inputs = {
 			"tenemut",
 			"dark-matter-scoop",
@@ -307,3 +330,7 @@ data:extend({
 	},
 })
 -- ezlib.log.print(data.raw["assembling-machine"]["replicator-5"])
+
+ezlib.tech.add.unlock_recipe("dark-matter-scoop", "X100_replicator_lab")
+zzzz = ezlib.tech.find.unlock_recipe("replicator-5")
+ezlib.tech.add.unlock_recipe(zzzz, "X100_replicator")
