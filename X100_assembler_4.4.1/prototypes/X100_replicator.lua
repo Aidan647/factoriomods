@@ -18,8 +18,8 @@ data:extend({
 		type = "recipe",
 		name = "X100_replicator",
 		enabled = "true",
-		subgroup = data.raw.item["replicator-5"].subgroup,
-		order = data.raw.item["replicator-5"].order,
+		subgroup = data.raw.item["replication-lab"].subgroup,
+		order = data.raw.item["replicator-5"].order .. "zzz",
 		ingredients =
 		{
 			{type="item", name="replicator-5", amount=100}
@@ -32,7 +32,7 @@ data:extend({
 	{
 		type = "item-group",
 		name = "X100_group_replicator",
-		order = "zz",
+		order = "zzzzzzzzzzzz",
 		icons ={
 		{icon = "__dark-matter-replicators__/graphics/icons/category-replicators.png"},
 		{icon = "__X100_assembler__/graphics/logo.png"}

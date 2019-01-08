@@ -21,8 +21,11 @@ data:extend(
 	{
 		type = "item-group",
 		name = "X100_group_assembler",
-		order = "zz",
-		icon = "__X100_assembler__/graphics/technology/automation.png",
+		order = "zzzzzzzzzzzz",
+		icons ={
+		{icon = "__X100_assembler__/graphics/technology/automation.png"},
+		{icon = "__X100_assembler__/graphics/logo.png"}
+		},
 		icon_size = 128
 	},
 	{
@@ -34,8 +37,11 @@ data:extend(
 	{
 		type = "item-group",
 		name = "X100_group_furnace",
-		order = "zz",
-		icon = "__X100_assembler__/graphics/technology/groupfurn.png",
+		order = "zzzzzzzzzzzz",
+		icons ={
+		{icon = "__X100_assembler__/graphics/technology/groupfurn.png"},
+		{icon = "__X100_assembler__/graphics/logo.png"}
+		},
 		icon_size = 128
 	},
 

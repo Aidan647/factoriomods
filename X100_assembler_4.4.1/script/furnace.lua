@@ -1,5 +1,4 @@
 require("list")
---Var
 
 local function first_result_type(recipe, x)
 	local z = "item"
@@ -26,6 +25,19 @@ local function first_result_type(recipe, x)
 	end
 	return z
 end
+
+local function fresult_type(name)
+	local z = "item"
+	local not_item = ezlib.tbl.add(ezlib.item.not_item, "fluid")
+	for a,b in ipairs(not_item) do
+		if data.raw[b][name] then
+			z = b
+			break
+		end
+	end
+	return z
+end
+
 for q,value in ipairs(list_furnace) do
 	local err = nil
 	local z = nil
@@ -34,6 +46,7 @@ for q,value in ipairs(list_furnace) do
 	local order_group, group, order_subgroup, subgroup, order
 	local recipe = table.deepcopy(data.raw.recipe[value])
 	local case = 0
+	local result_name, name, lenght
 	if recipe then
 		----------------------------------------------------------------------------------------------------
 		if recipe.result	then 									 case = 10 end
@@ -41,6 +54,23 @@ for q,value in ipairs(list_furnace) do
 		if recipe.normal	then	if recipe.normal.result		then case = 20 end end
 		if recipe.normal	then	if recipe.normal.results	then case = 21 end end
 		----------------------------------------------------------------------------------------------------
+		if case == 10 then
+			result_name = recipe.result
+		elseif case == 20 then
+			result_name = recipe.normal.result
+		elseif case == 11 then
+			if recipe.results[1]["name"] then
+				result_name = recipe.results[1]["name"]
+			else
+				result_name = recipe.results[1][1]
+			end
+		elseif case == 21 then
+			if recipe.normal.results[1]["name"] then
+				result_name = recipe.normal.results[1]["name"]
+			else
+				result_name = recipe.normal.results[1][1]
+			end
+		end
 		if case == 21 then 
 			for i,_ in ipairs(recipe.normal.results) do
 				if recipe.normal.results[i].amount_min then
@@ -91,16 +121,16 @@ for q,value in ipairs(list_furnace) do
 			for x,y in ipairs(recipe.results) do
 				if recipe.results[x]["amount"] then
 					if recipe.results[x]["amount"] then
-						recipe.results[x]["amount"] = recipe.results[x]["amount"] * 10
+						recipe.results[x]["amount"] = recipe.results[x]["amount"] * 100
 					else
-						recipe.results[x]["amount"] = 10
+						recipe.results[x]["amount"] = 100
 					end
 					--if recipe.results[x]["amount"] >= 10000 then err = 102 end
 				else
 					if recipe.results[x][2] then
-						recipe.results[x][2] = recipe.results[x][2] * 10
+						recipe.results[x][2] = recipe.results[x][2] * 100
 					else
-						recipe.results[x][2] = 10
+						recipe.results[x][2] = 100
 					end
 					--if recipe.results[x][2] >= 10000 then err = 103 end
 				end
@@ -109,16 +139,16 @@ for q,value in ipairs(list_furnace) do
 			for x,y in ipairs(recipe.normal.results) do
 				if recipe.normal.results[x]["amount"] then
 					if recipe.normal.results[x]["amount"] then
-						recipe.normal.results[x]["amount"] = recipe.normal.results[x]["amount"] * 10 or 10
+						recipe.normal.results[x]["amount"] = recipe.normal.results[x]["amount"] * 100 or 100
 					else
-						recipe.normal.results[x]["amount"] = 10
+						recipe.normal.results[x]["amount"] = 100
 					end
 					--if recipe.normal.results[x]["amount"] >= 10000 then err = 105 end
 				else
 					if recipe.normal.results[x][2] then
-						recipe.normal.results[x][2] = recipe.normal.results[x][2] * 10
+						recipe.normal.results[x][2] = recipe.normal.results[x][2] * 100
 					else
-						recipe.normal.results[x][2] = 10
+						recipe.normal.results[x][2] = 100
 					end
 					--if recipe.normal.results[x][2] >= 10000 then err = 106 end
 				end
@@ -126,16 +156,16 @@ for q,value in ipairs(list_furnace) do
 			for x,y in ipairs(recipe.expensive.results) do
 				if recipe.expensive.results[x]["amount"] then
 					if recipe.expensive.results[x]["amount"] then
-						recipe.expensive.results[x]["amount"] = recipe.expensive.results[x]["amount"] * 10
+						recipe.expensive.results[x]["amount"] = recipe.expensive.results[x]["amount"] * 100
 					else
-						recipe.expensive.results[x]["amount"] = 10
+						recipe.expensive.results[x]["amount"] = 100
 					end
 					--if recipe.expensive.results[x]["amount"] >= 10000 then err = 107 end
 				else
 					if recipe.expensive.results[x][2] then
-						recipe.expensive.results[x][2] = recipe.expensive.results[x][2] * 10
+						recipe.expensive.results[x][2] = recipe.expensive.results[x][2] * 100
 					else
-						recipe.expensive.results[x][2] = 10
+						recipe.expensive.results[x][2] = 100
 					end
 					--if recipe.expensive.results[x][2] >= 10000 then err = 108 end
 				end
@@ -146,29 +176,29 @@ for q,value in ipairs(list_furnace) do
 		if recipe.ingredients then
 			for x,y in ipairs(recipe.ingredients) do
 				if recipe.ingredients[x]["amount"] then
-					recipe.ingredients[x]["amount"] = recipe.ingredients[x]["amount"] * 10
+					recipe.ingredients[x]["amount"] = recipe.ingredients[x]["amount"] * 100
 					if recipe.ingredients[x]["amount"] >= 65500 then err = 109 end
 				else
-					recipe.ingredients[x][2] = recipe.ingredients[x][2] * 10
+					recipe.ingredients[x][2] = recipe.ingredients[x][2] * 100
 					if recipe.ingredients[x][2] >= 65500 then err = 110 end
 				end
 			end
 		elseif recipe.normal.ingredients then
 			for x,y in ipairs(recipe.normal.ingredients) do
 				if recipe.normal.ingredients[x]["amount"] then
-					recipe.normal.ingredients[x]["amount"] = recipe.normal.ingredients[x]["amount"] * 10
+					recipe.normal.ingredients[x]["amount"] = recipe.normal.ingredients[x]["amount"] * 100
 					if recipe.normal.ingredients[x]["amount"] >= 65500 then err = 111 end
 				else
-					recipe.normal.ingredients[x][2] = recipe.normal.ingredients[x][2] * 10
+					recipe.normal.ingredients[x][2] = recipe.normal.ingredients[x][2] * 100
 					if recipe.normal.ingredients[x][2] >= 65500 then err = 112 end
 				end
 			end
 			for x,y in ipairs(recipe.expensive.ingredients) do
 				if recipe.expensive.ingredients[x]["amount"] then
-					recipe.expensive.ingredients[x]["amount"] = recipe.expensive.ingredients[x]["amount"] * 10
+					recipe.expensive.ingredients[x]["amount"] = recipe.expensive.ingredients[x]["amount"] * 100
 					if recipe.expensive.ingredients[x]["amount"] >= 65500 then err = 113 end
 				else
-					recipe.expensive.ingredients[x][2] = recipe.expensive.ingredients[x][2] * 10
+					recipe.expensive.ingredients[x][2] = recipe.expensive.ingredients[x][2] * 100
 					if recipe.expensive.ingredients[x][2] >= 65500 then err = 114 end
 				end
 			end
@@ -230,9 +260,6 @@ for q,value in ipairs(list_furnace) do
 						end
 					end
 				end
-				if #recipe.normal.results > 1 then
-					recipe.localised_name = value.localised_name or value
-				end
 			end
 			if case == 11 then
 				for x,y in ipairs(recipe.results) do
@@ -255,37 +282,8 @@ for q,value in ipairs(list_furnace) do
 					end
 				end
 			end
-			if #recipe.results > 1 then
-				recipe.localised_name = value.localised_name or value
-			end
 		end
-	--local order_group, group, order_subgroup, subgroup, order
-		if itn then
-			recipe.subgroup = recipe.subgroup or itn.subgroup or "z"
-			recipe.order = recipe.order or itn.order or "z"
-			if data.raw["item-subgroup"][recipe.subgroup] then
-				subgroup = data.raw["item-subgroup"][recipe.subgroup].name or "z" 
-				order_subgroup = data.raw["item-subgroup"][recipe.subgroup].order or "z" 
-				group = data.raw["item-subgroup"][recipe.subgroup].group or "z" 
-				order_group = data.raw["item-group"][group].order or "z" 
-				order = order_group .. "--" .. group .. "--" .. order_subgroup .. "--" .. subgroup .. "--" .. recipe.order
-			else
-				order = "zz--" .. recipe.subgroup .. "--" .. recipe.order
-			end
-			recipe.order = order
-			if itn.icon and not recipe.icon then
-				recipe.icon = itn.icon
-			elseif itn.icons then
-				recipe.icons = itn.icons
-			end
-			if itn.icon_size and not recipe.icon_size then
-				recipe.icon_size = itn.icon_size
-			end
-		end
-	else
-		err = 0
-	end
-	
+
 		result_type = fresult_type(result_name)
 		if case == 11 then
 			lenght = #recipe.results
@@ -323,11 +321,41 @@ for q,value in ipairs(list_furnace) do
 				recipe.localised_name = {"fluid-name." .. result_name}
 			end
 		end
-	
+
+	--local order_group, group, order_subgroup, subgroup, order
+		if itn then
+			recipe.subgroup = recipe.subgroup or itn.subgroup or "z"
+			recipe.order = recipe.order or itn.order or "z"
+			if data.raw["item-subgroup"][recipe.subgroup] then
+				subgroup = data.raw["item-subgroup"][recipe.subgroup].name or "z" 
+				order_subgroup = data.raw["item-subgroup"][recipe.subgroup].order or "z" 
+				group = data.raw["item-subgroup"][recipe.subgroup].group or "z" 
+				order_group = data.raw["item-group"][group].order or "z" 
+				order = order_group .. "--" .. group .. "--" .. order_subgroup .. "--" .. subgroup .. "--" .. recipe.order
+			else
+				order = "zz--" .. recipe.subgroup .. "--" .. recipe.order
+			end
+			recipe.order = order
+			if itn.icon and not recipe.icon then
+				recipe.icon = itn.icon
+			elseif itn.icons then
+				recipe.icons = itn.icons
+			end
+			if itn.icon_size and not recipe.icon_size then
+				recipe.icon_size = itn.icon_size
+			end
+		end
+	else
+		err = 0
+	end
+
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+
 	if not err then
 		recipe.crafting_machine_tint = nil
 		recipe.category ="X100_smelting"
-		name = "_X100_"..value
+		name = "_X100_" .. value
 		recipe.name = name
 		recipe.subgroup = "X100_subgroup_furnace"
 		data:extend({recipe})
