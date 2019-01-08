@@ -319,6 +319,9 @@ for q,value in ipairs(list_furnace) do
 			end
 		elseif not recipe.localised_description then
 			recipe.localised_description = {"recipe-description." .. value}
+			if result_type == "fluid" then
+				recipe.localised_name = {"fluid-name." .. result_name}
+			end
 		end
 	
 	if not err then

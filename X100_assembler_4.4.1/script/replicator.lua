@@ -286,7 +286,7 @@ for q,value in ipairs(list_replicator) do
 		err = 0
 	end
 	
-	result_type = fresult_type(result_name)
+		result_type = fresult_type(result_name)
 		if case == 11 then
 			lenght = #recipe.results
 		end
@@ -319,6 +319,9 @@ for q,value in ipairs(list_replicator) do
 			end
 		elseif not recipe.localised_description then
 			recipe.localised_description = {"recipe-description." .. value}
+			if result_type == "fluid" then
+				recipe.localised_name = {"fluid-name." .. result_name}
+			end
 		end
 	
 	if not err then
