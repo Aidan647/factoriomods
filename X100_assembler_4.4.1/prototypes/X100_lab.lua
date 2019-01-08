@@ -23,7 +23,7 @@ data:extend({
 		},
 		icon_size = 32,
 		flags = {"placeable-player", "player-creation"},
-		minable = {mining_time = 1, result = "lab"},
+		minable = {mining_time = 1, result = "X100_lab"},
 		max_health = 150,
 		corpse = "big-remnants",
 		dying_explosion = "medium-explosion",
@@ -175,15 +175,11 @@ data:extend({
 		},
 		energy_usage = "1000kW",
 		researching_speed = 100,
-		inputs =
-		{
-			"science-pack-1",
-			"science-pack-2",
-			"science-pack-3",
-			"military-science-pack",
-			"production-science-pack",
-			"high-tech-science-pack",
-			"space-science-pack"
+		inputs = {
+			"tenemut",
+			"dark-matter-scoop",
+			"dark-matter-transducer",
+			"matter-conduit"
 		},	
 		module_specification =
 		{
