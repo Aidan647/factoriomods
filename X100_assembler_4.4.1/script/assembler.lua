@@ -296,6 +296,8 @@ for q,value in ipairs(list_assemdler) do
 			if data.raw[result_type][result_name] then
 				if data.raw[result_type][result_name].localised_name then
 					recipe.localised_name = data.raw[result_type][result_name].localised_name
+				elseif result_type == "fluid" then
+					recipe.localised_name = {"fluid-name." .. result_name}
 				elseif data.raw[result_type][result_name].place_result then
 					recipe.localised_name = {"entity-name." .. data.raw[result_type][result_name].place_result}
 					recipe.localised_description = {"entity-description." .. data.raw[result_type][result_name].place_result}

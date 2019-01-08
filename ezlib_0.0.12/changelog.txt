@@ -1,13 +1,18 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.11
 Date: 16.12.2018
+  Bugfixes:
+    - Some bug fixes 
+---------------------------------------------------------------------------------------------------
+Version: 0.0.11
+Date: 16.12.2018
   New:
     - Green screen/chroma key
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.10
 Date: 16.12.2018
   New:
-    - table ezlib.item.not_item is all items types (Ex. gun)
+    - table ezlib.item.not_item is all items types (Ex. gun or tool)
     - Changelog in game
   Improvements:
     - function ezlib.item.get.list have not_items type
