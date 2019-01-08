@@ -26,6 +26,19 @@ local function first_result_type(recipe, x)
 	end
 	return z
 end
+
+local function fresult_type(name)
+	local z = "item"
+	local not_item = ezlib.tbl.add(ezlib.item.not_item, "fluid")
+	for a,b in ipairs(not_item) do
+		if data.raw[b][name] then
+			z = b
+			break
+		end
+	end
+	return z
+end
+
 for q,value in ipairs(list_assemdler) do
 	local err = nil
 	local z = nil
@@ -34,6 +47,7 @@ for q,value in ipairs(list_assemdler) do
 	local order_group, group, order_subgroup, subgroup, order
 	local recipe = table.deepcopy(data.raw.recipe[value])
 	local case = 0
+	local result_name, name, lenght
 	if recipe then
 		----------------------------------------------------------------------------------------------------
 		if recipe.result	then 									 case = 10 end
@@ -41,6 +55,23 @@ for q,value in ipairs(list_assemdler) do
 		if recipe.normal	then	if recipe.normal.result		then case = 20 end end
 		if recipe.normal	then	if recipe.normal.results	then case = 21 end end
 		----------------------------------------------------------------------------------------------------
+		if case == 10 then
+			result_name = recipe.result
+		elseif case == 20 then
+			result_name = recipe.normal.result
+		elseif case == 11 then
+			if recipe.results[1]["name"] then
+				result_name = recipe.results[1]["name"]
+			else
+				result_name = recipe.results[1][1]
+			end
+		elseif case == 21 then
+			if recipe.normal.results[1]["name"] then
+				result_name = recipe.normal.results[1]["name"]
+			else
+				result_name = recipe.normal.results[1][1]
+			end
+		end
 		if case == 21 then 
 			for i,_ in ipairs(recipe.normal.results) do
 				if recipe.normal.results[i].amount_min then
@@ -230,9 +261,6 @@ for q,value in ipairs(list_assemdler) do
 						end
 					end
 				end
-				if #recipe.normal.results > 1 then
-					recipe.localised_name = value.localised_name or recipe.results[1][1].localised_name or recipe.results[1]["name"].localised_name
-				end
 			end
 			if case == 11 then
 				for x,y in ipairs(recipe.results) do
@@ -255,10 +283,41 @@ for q,value in ipairs(list_assemdler) do
 					end
 				end
 			end
-			if #recipe.results > 1 then
-				recipe.localised_name = value.localised_name or recipe.results[1][1].localised_name or recipe.results[1]["name"].localised_name
-			end
 		end
+
+		result_type = fresult_type(result_name)
+		if case == 11 then
+			lenght = #recipe.results
+		end
+		if case == 21 then
+			lenght = #recipe.normal.results
+		end
+		if not recipe.localised_name and lenght ~= 1 then
+			if data.raw[result_type][result_name] then
+				if data.raw[result_type][result_name].localised_name then
+					recipe.localised_name = data.raw[result_type][result_name].localised_name
+				elseif data.raw[result_type][result_name].place_result then
+					recipe.localised_name = {"entity-name." .. data.raw[result_type][result_name].place_result}
+					recipe.localised_description = {"entity-description." .. data.raw[result_type][result_name].place_result}
+				elseif data.raw[result_type][result_name].placed_as_equipment_result then
+					recipe.localised_name = {"equipment-name." .. data.raw[result_type][result_name].placed_as_equipment_result}
+					recipe.localised_description = {"equipment-description." .. data.raw[result_type][result_name].placed_as_equipment_result}
+				else
+					recipe.localised_name = {"item-name." .. result_name}
+					recipe.localised_description = {"item-description." .. result_name}
+					if ezlib.debug then
+						log(result_name .. 33333)
+					end
+				end
+			else
+				if ezlib.debug then
+					log(result_type .. "    " .. result_name .. "  44444")
+				end
+			end
+		elseif not recipe.localised_description then
+			recipe.localised_description = {"recipe-description." .. value}
+		end
+
 	--local order_group, group, order_subgroup, subgroup, order
 		if itn then
 			recipe.subgroup = recipe.subgroup or itn.subgroup or "z"
@@ -285,10 +344,14 @@ for q,value in ipairs(list_assemdler) do
 	else
 		err = 0
 	end
+
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+
 	if not err then
 		recipe.crafting_machine_tint = nil
 		recipe.category ="X100_assembler"
-		name = "_X100_"..value
+		name = "_X100_" .. value
 		recipe.name = name
 		recipe.subgroup = "X100_subgroup_assembler"
 		data:extend({recipe})

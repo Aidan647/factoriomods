@@ -1,5 +1,80 @@
 {
   "mods": [
-    
+    {
+      "name": "base",
+      "enabled": true
+    },
+    {
+      "name": "bob-basic-belt-reskin",
+      "enabled": false
+    },
+    {
+      "name": "bobenemies",
+      "enabled": false
+    },
+    {
+      "name": "bobgreenhouse",
+      "enabled": true
+    },
+    {
+      "name": "boblibrary",
+      "enabled": false
+    },
+    {
+      "name": "boblocale",
+      "enabled": false
+    },
+    {
+      "name": "boblogistics",
+      "enabled": true
+    },
+    {
+      "name": "bobmining",
+      "enabled": false
+    },
+    {
+      "name": "bobmods_gfxtweak",
+      "enabled": true
+    },
+    {
+      "name": "bobmodules",
+      "enabled": true
+    },
+    {
+      "name": "bobores",
+      "enabled": true
+    },
+    {
+      "name": "bobplates",
+      "enabled": false
+    },
+    {
+      "name": "bobpower",
+      "enabled": true
+    },
+    {
+      "name": "creative-mode-fix",
+      "enabled": true
+    },
+    {
+      "name": "error",
+      "enabled": false
+    },
+    {
+      "name": "ezlib",
+      "enabled": true
+    },
+    {
+      "name": "faster_dron_charge",
+      "enabled": true
+    },
+    {
+      "name": "fundament_tech",
+      "enabled": true
+    },
+    {
+      "name": "X100_assembler",
+      "enabled": true
+    }
   ]
 }

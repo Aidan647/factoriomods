@@ -12,4 +12,4 @@ for x,ing in pairs(list1) do
 		end
 	end
 end
-ezlib.item.not_item = {"gun", "mining-tool", "tool", "selection-tool", "blueprint", "blueprint-book", "deconstruction-item", "item-with-entity-data", "rail-planner", "item", "capsule", "module", "ammo", "armor", "repair-tool"}
+ezlib.item.not_item = {"gun", "mining-tool", "tool", "selection-tool", "item-with-tags", "item-with-label", "item-with-inventory", "blueprint", "blueprint-book", "deconstruction-item", "item-with-entity-data", "rail-planner", "item", "capsule", "module", "ammo", "armor", "repair-tool"}
